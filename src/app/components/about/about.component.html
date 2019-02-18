@@ -1,0 +1,56 @@
+<!-- pop over -->
+<h3>Pop over</h3>
+<p>
+	<span id="subject1">Mouse Over on details</span>
+	(<a id="link1"
+		(mouseenter)="togglePopover()"
+		(mouseleave)="togglePopover()">details</a>)
+</p>
+<dx-popover
+	target="#link1" 
+	position="top"
+	[width]="300"
+	[(visible)]="visible">
+	<div *dxTemplate="let data = model of 'content'">
+		<p>Popover Content</p>
+	</div>
+</dx-popover>
+<br />
+
+<!-- popup -->
+<h3>Popup</h3>
+<br />
+<dx-text-box placeholder="Type a text here..."  [(value)]="textValue"></dx-text-box>
+<br />
+<div>{{textValue}}</div>
+<br />
+<dx-button
+    class="button-info"
+    text="Popup"
+    (onClick)="showText()">
+</dx-button>
+
+<dx-popup
+    class="popup"
+    [width]="300"
+    [height]="250"
+    [showTitle]="true"
+    title="Information"
+    [dragEnabled]="false"
+    [closeOnOutsideClick]="true"
+    [(visible)]="popupVisible">
+        <div *dxTemplate="let data of 'content'">
+            <p>{{textValue}}</p>
+            <dx-text-box placeholder="Type a text here..."  [(value)]="changedTextValue"></dx-text-box>
+            <dx-button
+                class="button-info"
+                text="Apply" 
+                (onClick)="changeText(changedTextValue)">
+            </dx-button>
+        </div>
+</dx-popup>
+<br />
+
+<!-- tabs -->
+<h3>Tabs</h3>
+<dx-tab-panel [items]="tabs"></dx-tab-panel>

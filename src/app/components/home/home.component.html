@@ -1,0 +1,21 @@
+<!-- slide show -->
+<dx-gallery
+    [dataSource]="galleryImages"
+	[height]="400"
+	[slideshowDelay]="2500"
+	[swipeEnabled]="true"
+	[showNavButtons]="true"
+	[loop]="true">
+</dx-gallery>
+<br />
+<!-- Data Grid -->
+<h3>Data Grid</h3>
+<dx-data-grid 
+    [dataSource]="Details"
+	keyExpr="Id" 
+	[showBorders]="true">
+    <dxi-column dataField="Name"></dxi-column>
+	<dxi-column dataField="Designation"></dxi-column>
+	<dxi-column dataField="City"></dxi-column>
+    <dxi-column dataField="State"></dxi-column>
+</dx-data-grid>

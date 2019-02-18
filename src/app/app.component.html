@@ -1,88 +1,10 @@
 <!-- navbar -->
 <dx-nav-bar>
-	<dxi-item text="HOME" icon="home"></dxi-item>
-	<dxi-item text="ABOUTUS" icon="box"></dxi-item>
-	<dxi-item text="SERVICES" icon="toolbox"></dxi-item>
-	<dxi-item text="PRODUCTS" icon="product"></dxi-item>
-	<dxi-item text="CONTACTUS" icon="tel"></dxi-item>
-	<dxi-item text="INFO" icon="info"></dxi-item>
-	<dxi-item text="FAVORITES" icon="favorites"></dxi-item>
+	<dxi-item routerLink="/home">HOME</dxi-item>
+	<dxi-item routerLink="/about">ABOUT US</dxi-item>
+	<dxi-item routerLink="/services">SERVICES</dxi-item>
+	<dxi-item routerLink="/products">PRODUCTS</dxi-item>
+	<dxi-item routerLink="/contact">CONTACT US</dxi-item>
 </dx-nav-bar>
-<br />
 
-<!-- slide show -->
-<dx-gallery
-    [dataSource]="galleryImages"
-	[height]="400"
-	[slideshowDelay]="2500"
-	[swipeEnabled]="true"
-	[showNavButtons]="true"
-	[loop]="true">
-</dx-gallery>
-<br />
-
-<!-- Data Grid -->
-<h3>Data Grid</h3>
-<dx-data-grid 
-    [dataSource]="Details"
-	keyExpr="Id" 
-	[showBorders]="true">
-    <dxi-column dataField="Name"></dxi-column>
-	<dxi-column dataField="Designation"></dxi-column>
-	<dxi-column dataField="City"></dxi-column>
-    <dxi-column dataField="State"></dxi-column>
-</dx-data-grid>
-<br />
-
-<!-- Data List -->
-<h3>Data List</h3>
-<dx-list
-	[dataSource]="dataList"
-	[searchEnabled]="false">
-</dx-list>
-<br />
-
-<!-- pop over -->
-<h3>Pop over</h3>
-<p>
-	<span id="subject1">Mouse Over on details</span>
-	(<a id="link1"
-		(mouseenter)="togglePopover()"
-		(mouseleave)="togglePopover()">details</a>)
-</p>
-<dx-popover
-	target="#link1" 
-	position="top"
-	[width]="300"
-	[(visible)]="visible">
-	<div *dxTemplate="let data = model of 'content'">
-		<p>Popover Content</p>
-	</div>
-</dx-popover>
-<br />
-
-<!-- popup -->
-<h3>Popup</h3>
-<dx-button
-    class="button-info"
-    text="Popup"
-    (onClick)="showInfo()">
-</dx-button>
-<dx-popup
-    class="popup"
-    [width]="300"
-    [height]="250"
-    [showTitle]="true"
-    title="Information"
-    [dragEnabled]="false"
-    [closeOnOutsideClick]="true"
-    [(visible)]="popupVisible">
-        <div *dxTemplate="let data of 'content'">
-			<p>Popup when clicked on Popup button</p>
-        </div>
-</dx-popup>
-<br />
-
-<!-- tabs -->
-<h3>Tabs</h3>
-<dx-tab-panel [items]="tabs"></dx-tab-panel>
+<router-outlet></router-outlet>
