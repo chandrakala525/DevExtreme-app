@@ -11,11 +11,26 @@
 <!-- Data Grid -->
 <h3>Data Grid</h3>
 <dx-data-grid 
-    [dataSource]="Details"
+	id="gridContainer"
+	[dataSource]="Details"
+	[allowColumnResizing]="true"
+    [allowColumnReordering]="true"
 	keyExpr="Id" 
 	[showBorders]="true">
+
+	<dxo-selection mode="single"></dxo-selection>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-group-panel [visible]="true"></dxo-group-panel>
+    <dxo-state-storing [enabled]="true" type="localStorage" storageKey="storage"></dxo-state-storing>
     <dxi-column dataField="Name"></dxi-column>
 	<dxi-column dataField="Designation"></dxi-column>
 	<dxi-column dataField="City"></dxi-column>
-    <dxi-column dataField="State"></dxi-column>
+	<dxi-column dataField="State"></dxi-column>
+	
+	<dxo-state-storing 
+        [enabled]="true" 
+        type="custom" 
+        [customLoad]="loadState"
+        [customSave]="saveState">
+    </dxo-state-storing>
 </dx-data-grid>

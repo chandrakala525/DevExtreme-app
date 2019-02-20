@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { NgModule,OnInit, Component, enableProdMode } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { DxDataGridModule } from 'devextreme-angular';
+
+if(!/localhost:4200/.test(document.location.host)) {
+  enableProdMode();
+}
 
 @Component({
   selector: 'app-home',

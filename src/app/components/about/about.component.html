@@ -53,4 +53,15 @@
 
 <!-- tabs -->
 <h3>Tabs</h3>
-<dx-tab-panel [items]="tabs"></dx-tab-panel>
+<div id="tabs">
+        <dx-tabs
+            [dataSource]="tabs"
+            [selectedIndex]="0"
+            (onItemClick)="selectTab($event)"
+        ></dx-tabs>
+        <div class="content dx-fieldset">
+            <div class="dx-field">
+                    {{ tabContent }}
+            </div>
+        </div>
+    </div>

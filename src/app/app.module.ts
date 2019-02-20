@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { DxButtonModule, DxTabPanelModule, DxTextBoxModule  } from 'devextreme-angular';
+import { NgModule, enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { DxButtonModule, DxTabsModule, DxTextBoxModule, DxSelectBoxModule } from 'devextreme-angular';
 import { DxDataGridModule, DxListModule, DxNavBarModule, DxGalleryModule, DxPopoverModule, DxPopupModule, DxTemplateModule  } from "devextreme-angular";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,8 +34,9 @@ import { ContactComponent } from './components/contact/contact.component';
     DxPopoverModule,
     DxPopupModule,
     DxTemplateModule,
-    DxTabPanelModule,
-    DxTextBoxModule  
+    DxTabsModule,
+    DxTextBoxModule,
+    DxSelectBoxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
