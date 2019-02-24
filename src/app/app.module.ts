@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { DxButtonModule, DxTabsModule, DxTextBoxModule, DxSelectBoxModule } from 'devextreme-angular';
+import { DxButtonModule, DxTabPanelModule, DxTabsModule, DxTextBoxModule, DxSelectBoxModule } from 'devextreme-angular';
 import { DxDataGridModule, DxListModule, DxNavBarModule, DxGalleryModule, DxPopoverModule, DxPopupModule, DxTemplateModule  } from "devextreme-angular";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ServiceComponent } from './components/service/service.component';
 import { ProductComponent } from './components/product/product.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { PopupComponent } from './components/about/popup/popup.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ContactComponent } from './components/contact/contact.component';
     AboutComponent,
     ServiceComponent,
     ProductComponent,
-    ContactComponent
+    ContactComponent,
+    PopupComponent
     
   ],
   imports: [
@@ -35,6 +37,7 @@ import { ContactComponent } from './components/contact/contact.component';
     DxPopupModule,
     DxTemplateModule,
     DxTabsModule,
+    DxTabPanelModule,
     DxTextBoxModule,
     DxSelectBoxModule
   ],

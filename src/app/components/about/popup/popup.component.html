@@ -1,0 +1,19 @@
+<dx-popup
+    class="popup"
+    [width]="300"
+    [height]="250"
+    [showTitle]="true"
+    title="Information"
+    [dragEnabled]="false"
+    [closeOnOutsideClick]="true"
+    [(visible)]="popupVisible">
+        <div *dxTemplate="let data of 'content'">
+            <p>{{textValue}}</p>
+            <dx-text-box placeholder="Type a text here..."  [(value)]="textValue"></dx-text-box>
+            <dx-button
+                class="button-info"
+                text="Apply" 
+                (onClick)="changeText(textValue)">
+            </dx-button>
+        </div>
+</dx-popup>

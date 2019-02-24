@@ -29,31 +29,42 @@
     text="Popup"
     (onClick)="showText()">
 </dx-button>
+<app-popup [popupVisible] = "popupVisible" [textValue] = "textValue" (myOutput)="onChangeText($event)"></app-popup>
 
-<dx-popup
-    class="popup"
-    [width]="300"
-    [height]="250"
-    [showTitle]="true"
-    title="Information"
-    [dragEnabled]="false"
-    [closeOnOutsideClick]="true"
-    [(visible)]="popupVisible">
-        <div *dxTemplate="let data of 'content'">
-            <p>{{textValue}}</p>
-            <dx-text-box placeholder="Type a text here..."  [(value)]="changedTextValue"></dx-text-box>
-            <dx-button
-                class="button-info"
-                text="Apply" 
-                (onClick)="changeText(changedTextValue)">
-            </dx-button>
-        </div>
-</dx-popup>
+
+
+
 <br />
 
 <!-- tabs -->
 <h3>Tabs</h3>
-<div id="tabs">
+
+<dx-tab-panel 
+    [items]="tabs" 
+    [dataSource]="tabs"
+    [selectedIndex]="0">
+    <div *dxTemplate="let tab of 'title'; let i = index">
+        <div *ngIf="tab.text === 'Tab 1'">
+            <div>{{tab.text}}</div>
+            <!-- <div>{{tab.content}}</div> -->
+        </div>
+        <div *ngIf="tab.text === 'Tab 2'">
+            <div>{{tab.text}}</div>
+            <!-- <div>{{tab.content}}</div> -->
+        </div>
+        <div *ngIf="tab.text === 'Tab 3'">
+            <div>{{tab.text}}</div>
+            <!-- <div>{{tab.content}}</div> -->
+        </div>
+    </div>
+    <div *dxTemplate="let item of 'item'">
+        <div>{{item.content}}</div>
+      </div>
+</dx-tab-panel>
+
+
+
+<!-- <div id="tabs">
         <dx-tabs
             [dataSource]="tabs"
             [selectedIndex]="0"
@@ -64,4 +75,4 @@
                     {{ tabContent }}
             </div>
         </div>
-    </div>
+    </div> -->
